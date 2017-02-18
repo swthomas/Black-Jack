@@ -1,17 +1,21 @@
 package blackjack;
 
 public class Card implements Comparable<Card>{
+	
     private Rank rank;
     private Suit suit;
+    private int value;
 
     public Card(Rank r, Suit s) {
         rank = r;
         suit = s;
-    }
+        value = CardValues.getValue(r);
+        }
 
+    
     @Override
     public String toString() {
-        return (rank + " of " + suit).toLowerCase();
+        return (rank + " of " + suit);
     }
 
     @Override
@@ -59,4 +63,8 @@ public class Card implements Comparable<Card>{
 	public Suit getSuit() {
 		return suit;
 	}
+
+	public int getValue() {
+		return value;
+	}	
 }

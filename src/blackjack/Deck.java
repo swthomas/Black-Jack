@@ -6,18 +6,18 @@ import java.util.List;
 
 public class Deck {
 
-    List<Card> deck = new ArrayList<>(52);
-    
+	List<Card> deck = new ArrayList<>(52);
+
 	void createDeck() {
-        for (Suit s : Suit.values()) {
-            for (Rank r : Rank.values()) {
-                deck.add(new Card(r, s));
-            }
-        }
+		for (Suit s : Suit.values()) {
+			for (Rank r : Rank.values()) {
+				deck.add(new Card(r, s));
+			}
+		}
+		Collections.shuffle(deck);
 	}
-	
-	void shuffleDeck(List<Card> deck) {
-        Collections.shuffle(deck);
-	
-    }
+
+	public Card dealCard() {
+		return deck.remove(0);
+	}
 }
