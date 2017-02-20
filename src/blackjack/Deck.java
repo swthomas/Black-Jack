@@ -16,8 +16,12 @@ public class Deck {
 		}
 		Collections.shuffle(deck);
 	}
-
+	
 	public Card dealCard() {
 		return deck.remove(0);
 	}
+	
+	
+	
+	
 }
